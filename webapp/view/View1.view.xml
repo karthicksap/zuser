@@ -1,0 +1,57 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	controllerName="art.bif.ur.controller.View1">
+	<Page>
+		<f:SimpleForm id="idSimpleForm" 
+			          editable="true" 
+			          layout="ResponsiveGridLayout" 
+			          title="User Registeration" 
+			          labelSpanXL="3" 
+			          labelSpanL="3"
+				   	  labelSpanM="3" 
+				   	  labelSpanS="12"
+				   	  adjustLabelSpan="false" 
+				   	  emptySpanXL="4" 
+				   	  emptySpanL="4" 
+				   	  emptySpanM="4" 
+				   	  emptySpanS="0" 
+				   	  columnsXL="1"
+		         	  columnsL="1" 
+		         	  columnsM="1" 
+		         	  singleContainerFullSize="false">
+			<f:content>
+				<Label text="Name"/>
+				<Input id="idName" value="{data>/supplier/Name}" maxLength="70" required="true" />
+				<Label text="PAN No"/>
+				<Input id="idPan" value="{data>/supplier/PanNo}" width="150px" maxLength="10" required="true" />
+				<Label text="Street/No" required="true" />
+				<Input  id="idStreet" value="{data>/supplier/Street}" maxLength="60"/>
+				<Input id="idBuilding" value="{data>/supplier/Building}" maxLength="3">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<Label text="City/Postal code" required="true" />
+				<Input id="idCity" value="{data>/supplier/City}" maxLength="40"/>
+				<Input id="idPost" value="{data>/supplier/PostalCode}" maxLength="10">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<Label text="District/Region" required="true" />
+				<Input id="idDis" value="{data>/supplier/District}" maxLength="40"/>
+				<Input id="idReg" value="{data>/supplier/Region}" maxLength="3" showValueHelp="true" valueHelpRequest="onHelp">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4"/>
+					</layoutData>
+				</Input>
+			</f:content>
+		</f:SimpleForm>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Register" type="Accept" press="onSave" />
+				<Button text="Cancel" type="Reject" press="onCancel" />
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
