@@ -19,8 +19,8 @@
 		         	  columnsM="1" 
 		         	  singleContainerFullSize="false">
 			<f:content>
-				<Label text="Name"/>
-				<Input id="idName" value="{data>/supplier/NAME}" maxLength="70" required="true" />
+				<Label text="Name" required="true"/>
+				<Input id="idName" value="{path: 'data>/supplier/NAME'}" maxLength="70" />
 				<Label text="PAN No"/>
 				<Input id="idPan" value="{data>/supplier/PAN_NO}" width="150px" maxLength="10" required="true" />
 				<Label text="Street/No" required="true" />
@@ -48,6 +48,14 @@
 		</f:SimpleForm>
 		<footer>
 			<Toolbar>
+
+                <Button
+                    icon="sap-icon://alert"
+                    text="{= ${message>/}.length }"
+                    visible="{= ${message>/}.length > 0 }"
+                    type="Reject"
+                    press="onMessagePopoverPress" />
+                    
 				<ToolbarSpacer/>
 				<Button text="Register" type="Accept" press="onSave" />
 				<Button text="Cancel" type="Reject" press="onCancel" />
