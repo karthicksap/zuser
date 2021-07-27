@@ -20,26 +20,26 @@
 		         	  singleContainerFullSize="false">
 			<f:content>
 				<Label text="Name"/>
-				<Input id="idName" value="{data>/supplier/Name}" maxLength="70" required="true" />
+				<Input id="idName" value="{data>/supplier/NAME}" maxLength="70" required="true" />
 				<Label text="PAN No"/>
-				<Input id="idPan" value="{data>/supplier/PanNo}" width="150px" maxLength="10" required="true" />
+				<Input id="idPan" value="{data>/supplier/PAN_NO}" width="150px" maxLength="10" required="true" />
 				<Label text="Street/No" required="true" />
-				<Input  id="idStreet" value="{data>/supplier/Street}" maxLength="60"/>
-				<Input id="idBuilding" value="{data>/supplier/Building}" maxLength="3">
+				<Input  id="idStreet" value="{data>/supplier/STREET}" maxLength="60"/>
+				<Input id="idBuilding" value="{data>/supplier/BUILDING}" maxLength="3">
 					<layoutData>
 						<l:GridData span="XL1 L2 M2 S4"/>
 					</layoutData>
 				</Input>
 				<Label text="City/Postal code" required="true" />
-				<Input id="idCity" value="{data>/supplier/City}" maxLength="40"/>
-				<Input id="idPost" value="{data>/supplier/PostalCode}" maxLength="10">
+				<Input id="idCity" value="{data>/supplier/CITY}" maxLength="40"/>
+				<Input id="idPost" value="{data>/supplier/POSTAL_CODE}" maxLength="10">
 					<layoutData>
 						<l:GridData span="XL1 L2 M2 S4"/>
 					</layoutData>
 				</Input>
 				<Label text="District/Region" required="true" />
-				<Input id="idDis" value="{data>/supplier/District}" maxLength="40"/>
-				<Input id="idReg" value="{data>/supplier/Region}" maxLength="3" showValueHelp="true" valueHelpRequest="onHelp">
+				<Input id="idDis" value="{data>/supplier/DISTRICT}" maxLength="40"/>
+				<Input id="idReg" value="{data>/supplier/REGION}" maxLength="3" showValueHelp="true" valueHelpRequest="onHelp">
 					<layoutData>
 						<l:GridData span="XL1 L2 M2 S4"/>
 					</layoutData>
