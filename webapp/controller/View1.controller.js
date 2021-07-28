@@ -7,14 +7,15 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/m/MessageToast",
     "sap/ui/core/routing/History",
-	"sap/ui/core/message/Message",
-	"sap/ui/core/library",
-	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
+    "sap/ui/core/message/Message",
+    "sap/ui/core/library",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    "sap/ui/core/routing/History"
 ], function (BaseController, JSONModel, Fragment, Formatter, MessagePopover, MessageBox,
-    MessageToast, History, Message, library, Filter, FilterOperator) {
+    MessageToast, History, Message, library, Filter, FilterOperator, History) {
 
-        var MessageType = library.MessageType;
+    var MessageType = library.MessageType;
 
     return BaseController.extend("art.bif.ur.controller.View1", {
 
@@ -23,10 +24,10 @@ sap.ui.define([
             var oMessageManager, oModel, oView;
             oView = this.getView();
 
-			oMessageManager = sap.ui.getCore().getMessageManager();
-			oView.setModel(oMessageManager.getMessageModel(), "message");
+            oMessageManager = sap.ui.getCore().getMessageManager();
+            oView.setModel(oMessageManager.getMessageModel(), "message");
 
-			oMessageManager.registerObject(oView, true);
+            oMessageManager.registerObject(oView, true);
 
             this.oLocal = new JSONModel({
 
@@ -106,19 +107,19 @@ sap.ui.define([
                 this.getView().byId("idName").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idName").setValueStateText("Name cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Name cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Name cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
 
                 this.getView().byId("idName").setValueState(sap.ui.core.ValueState.None);
-                
+
 
             }
 
@@ -127,13 +128,13 @@ sap.ui.define([
                 this.getView().byId("idPan").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idPan").setValueStateText("Pan number cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Pan number cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Pan number cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -147,13 +148,13 @@ sap.ui.define([
                 this.getView().byId("idStreet").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idStreet").setValueStateText("Street cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Street cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Street cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
 
@@ -168,13 +169,13 @@ sap.ui.define([
                 this.getView().byId("idBuilding").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idBuilding").setValueStateText("Building number cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Building cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Building cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -188,13 +189,13 @@ sap.ui.define([
                 this.getView().byId("idCity").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idCity").setValueStateText("City cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "City cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "City cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -208,13 +209,13 @@ sap.ui.define([
                 this.getView().byId("idPost").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idPost").setValueStateText("Post code cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Post code cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Post code cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -228,13 +229,13 @@ sap.ui.define([
                 this.getView().byId("idDis").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idDis").setValueStateText("District cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "District cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "District cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -248,13 +249,13 @@ sap.ui.define([
                 this.getView().byId("idReg").setValueState(sap.ui.core.ValueState.Error);
                 this.getView().byId("idReg").setValueStateText("Region cannot be empty");
 
-			// var oMessage = new Message({
-			// 	message: "Region cannot be empty",
-			// 	type: MessageType.Error,
-			// 	target: "/Dummy",
-			// 	processor: this.getView().getModel()
-			// });
-			// sap.ui.getCore().getMessageManager().addMessages(oMessage);
+                // var oMessage = new Message({
+                // 	message: "Region cannot be empty",
+                // 	type: MessageType.Error,
+                // 	target: "/Dummy",
+                // 	processor: this.getView().getModel()
+                // });
+                // sap.ui.getCore().getMessageManager().addMessages(oMessage);
 
 
             } else {
@@ -266,25 +267,25 @@ sap.ui.define([
 
             var that = this;
 
-            if(this.getView().getModel("message").getProperty("/").length === 0){
+            if (this.getView().getModel("message").getProperty("/").length === 0) {
 
-            MessageBox.confirm("Please check information before save once it's saved you won't be able to change you need to contact admin to change", {
+                MessageBox.confirm("Please check information before save once it's saved you won't be able to change you need to contact admin to change", {
 
-                title: "Do you want to save it?",
-                onClose: this.messConfirm.bind(this)
+                    title: "Do you want to save it?",
+                    onClose: this.messConfirm.bind(this)
 
-            }); 
-        
+                });
 
-            var oDataModel = this.getView().getModel();
 
-            oDataModel.callFunction("/GetSupplierNo", {
+                var oDataModel = this.getView().getModel();
 
-                success: function (data) {
-                    that.oLocal.setProperty("/supplier/SUPPLIE_NO", data.GetSupplierNo.SupplierNo);
+                oDataModel.callFunction("/GetSupplierNo", {
 
-                }
-            });
+                    success: function (data) {
+                        that.oLocal.setProperty("/supplier/SUPPLIE_NO", data.GetSupplierNo.SupplierNo);
+
+                    }
+                });
 
             }
 
@@ -314,7 +315,7 @@ sap.ui.define([
         },
 
         afterSave: function (oSucc) {
-        	
+
 
             MessageToast.show("User" + " " + oSucc.SUPPLIE_NO + " " + "registred successfully");
             this.getView().getModel("data").setProperty("/supplier", "");
@@ -323,60 +324,75 @@ sap.ui.define([
         },
 
         afterFail: function (oFail) {
- 
-			var aMessages = sap.ui.getCore().getMessageManager().getMessageModel().oData;
-			
-			for(var i=0; i < aMessages.length; i++){
-				
-				if(aMessages[i].message==="An exception was raised"){
-					
-					sap.ui.getCore().getMessageManager().removeMessages(aMessages[i]);
-				}
-				
-			}
-			
+
+            var aMessages = sap.ui.getCore().getMessageManager().getMessageModel().oData;
+
+            for (var i = 0; i < aMessages.length; i++) {
+
+                if (aMessages[i].message === "An exception was raised") {
+
+                    sap.ui.getCore().getMessageManager().removeMessages(aMessages[i]);
+                }
+
+            }
+
         },
 
-		onMessagePopoverPress: function (oEvent) {
+        onMessagePopoverPress: function (oEvent) {
 
-			var oSourceControl = oEvent.getSource();
-			this._getMessagePopover().then(function(oMessagePopover){
-				oMessagePopover.openBy(oSourceControl);
-			});
+            var oSourceControl = oEvent.getSource();
+            this._getMessagePopover().then(function (oMessagePopover) {
+                oMessagePopover.openBy(oSourceControl);
+            });
         },
-		_getMessagePopover: function () {
-			var oView = this.getView();
+        _getMessagePopover: function () {
+            var oView = this.getView();
 
-			// create popover lazily (singleton)
-			if (!this._pMessagePopover) {
-				this._pMessagePopover = Fragment.load({
-					id: oView.getId(),
-					name: "art.bif.ur.fragments.MessagePop"
-				}).then(function (oMessagePopover) {
-					oView.addDependent(oMessagePopover);
-					return oMessagePopover;
-				});
-			}
-			return this._pMessagePopover;
-		},
-		onSearch: function(oSearch){
-			
-			var oView = this.getView();
+            // create popover lazily (singleton)
+            if (!this._pMessagePopover) {
+                this._pMessagePopover = Fragment.load({
+                    id: oView.getId(),
+                    name: "art.bif.ur.fragments.MessagePop"
+                }).then(function (oMessagePopover) {
+                    oView.addDependent(oMessagePopover);
+                    return oMessagePopover;
+                });
+            }
+            return this._pMessagePopover;
+        },
+        onSearch: function (oSearch) {
 
-			var State = oSearch.getParameter("value");
-			
-			var oFilter = new Filter("Bezei", FilterOperator.Contains, State);
-			
-			var oFilterFin = new Filter({
-				
-				filters: [oFilter],
-				and: false
-				
-			});
-			var binding = this.fragmentfin.getBinding("items");
-			
-			binding.filter(oFilterFin);
-		}
+            var oView = this.getView();
+
+            var State = oSearch.getParameter("value");
+
+            var oFilter = new Filter("Bezei", FilterOperator.Contains, State);
+
+            var oFilterFin = new Filter({
+
+                filters: [oFilter],
+                and: false
+
+            });
+            var binding = this.fragmentfin.getBinding("items");
+
+            binding.filter(oFilterFin);
+        },
+
+        onBack: function () {
+
+            debugger;
+            var oHistory = History.getInstance();
+            var sPreviousHash = oHistory.getPreviousHash();
+
+            if (sPreviousHash !== undefined) {
+                window.history.go(-1);
+            } else {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("start", true);
+            }
+
+        }
 
     });
 

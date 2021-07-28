@@ -1,6 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	controllerName="art.bif.ur.controller.View1">
-	<Page>
+	<Page showNavButton="true"
+          navButtonPress="onBack">
 		<f:SimpleForm id="idSimpleForm" 
 			          editable="true" 
 			          layout="ResponsiveGridLayout" 
