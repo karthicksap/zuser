@@ -53,7 +53,7 @@
                     icon="sap-icon://alert"
                     text="{= ${message>/}.length }"
                     visible="{= ${message>/}.length > 0 }"
-                    type="Reject"
+                    type="Emphasized"
                     press="onMessagePopoverPress" />
                     
 				<ToolbarSpacer/>
