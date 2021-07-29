@@ -40,7 +40,9 @@ sap.ui.define([
                     "CITY": "",
                     "DISTRICT": "",
                     "POSTAL_CODE": "",
-                    "REGION": ""
+                    "REGION": "",
+                    "CREATED_BY": "",
+                    "CHANGED_BY": ""
 
                 }
 
@@ -276,13 +278,15 @@ sap.ui.define([
 
                 });
 
-
                 var oDataModel = this.getView().getModel();
 
                 oDataModel.callFunction("/GetSupplierNo", {
 
                     success: function (data) {
+
+                        var oUser = new sap.ushell.services.UserInfo();
                         that.oLocal.setProperty("/supplier/SUPPLIE_NO", data.GetSupplierNo.SupplierNo);
+                        that.oLocal.setProperty("/supplier/CREATED_BY", oUser.getId());
 
                     }
                 });
@@ -315,7 +319,6 @@ sap.ui.define([
         },
 
         afterSave: function (oSucc) {
-
 
             MessageToast.show("User" + " " + oSucc.SUPPLIE_NO + " " + "registred successfully");
             this.getView().getModel("data").setProperty("/supplier", "");
